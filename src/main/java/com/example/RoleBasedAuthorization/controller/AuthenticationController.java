@@ -8,6 +8,7 @@ import com.example.RoleBasedAuthorization.dto.UserRequestDto;
 import com.example.RoleBasedAuthorization.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,7 @@ public class AuthenticationController {
     public ResponseEntity<AuthResponseDto> authenticate(@RequestBody AuthRequestDto authRequestDto){
         return ResponseEntity.ok(authenticationService.authenticate(authRequestDto));
     }
+
 
 
 
