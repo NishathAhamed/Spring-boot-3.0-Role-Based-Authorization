@@ -35,25 +35,47 @@ public class UserService {
     }
 
     public void initRolesAndUser() {
+//
+//
+//        Roles role1;
+//        role1 = new Roles();
+//        role1.setName("ROLE_ADMIN");
+//        var user= User.builder()
+//                .userName("Janith")
+//                .password(passwordEncoder.encode("pwd1"))
+//                .build();
+//        Set<Roles> roles = new HashSet<>();
+//        roles.add(role1);
+//        user.setRoles(roles);
+//        userRepository.save(user);
+//        roleRepository.save(role1);
+//
+//        Roles role2;
+//        role2 = new Roles();
+//        role2.setName("ROLE_USER");
+//        roleRepository.save(role2);
 
-
-        Roles role1;
-        role1 = new Roles();
+        Roles role1 = new Roles();
         role1.setName("ROLE_ADMIN");
-        var user= User.builder()
+        Roles role2 = new Roles();
+        role2.setName("ROLE_USER");
+
+        User user = User.builder()
                 .userName("Janith")
                 .password(passwordEncoder.encode("pwd1"))
                 .build();
+
         Set<Roles> roles = new HashSet<>();
         roles.add(role1);
         user.setRoles(roles);
+
+
         userRepository.save(user);
         roleRepository.save(role1);
-
-        Roles role2;
-        role2 = new Roles();
-        role2.setName("ROLE_USER");
         roleRepository.save(role2);
+
+
+
 
 
 
