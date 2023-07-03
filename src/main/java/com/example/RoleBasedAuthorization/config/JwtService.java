@@ -19,7 +19,7 @@ import java.util.function.Function;
 
 public class JwtService {
 
-    private static final String SECURITY_KEY = "Role based authorization";
+    private static final String SECURITY_KEY = "526F6C6520626173656420617574686F72697A6174696F6E";
 
 
     public String extractUserName(String token){
@@ -62,7 +62,7 @@ public class JwtService {
         return extractClaim(token,Claims::getExpiration);
     }
 
-    public String generateToken(UserDetails userDetails,Map<String,Claims> extraClaims){
+    public String generateToken(UserDetails userDetails,Map<String,Object> extraClaims){
 
        return Jwts
                 .builder()
