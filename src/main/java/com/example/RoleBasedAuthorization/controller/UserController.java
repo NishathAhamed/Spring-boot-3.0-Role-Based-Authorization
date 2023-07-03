@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Autowired
-    private UserRepository userRepository;
 
-    @PostMapping("user/register")
-    public void register(@RequestBody User user){
-        userRepository.save(user);
-    }
+
 }
